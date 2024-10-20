@@ -1,0 +1,17 @@
+@defer (on viewport) {
+    <div class="section {{ name }} viewport">
+        <p>{{ name }} defer on viewport!</p>
+    </div>
+} @placeholder {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @loading (after 1s; minimum 3s) {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @error {
+    <div class="section {{ name }} error">
+        <p>{{ name }} error!</p>
+    </div>
+}

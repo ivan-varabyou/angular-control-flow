@@ -1,0 +1,34 @@
+<div class="section">
+    <p>catalog works!</p>
+    <input type="text" [(ngModel)]="name">
+    <app-shared></app-shared>
+</div>
+
+@defer (on viewport) {
+    @switch (theme) {
+        @case ('theme1') {
+            <app-section1></app-section1>
+        }
+        @case ('theme2') {
+            <app-section2></app-section2>
+        }
+        @case ('theme3') {
+            <app-section3></app-section3>
+        }
+        @default {
+            <app-section4></app-section4>
+        }
+    }
+} @placeholder {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @loading (after 1s; minimum 3s) {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @error {
+    <div class="section {{ name }} error">
+        <p>{{ name }} error!</p>
+    </div>
+}

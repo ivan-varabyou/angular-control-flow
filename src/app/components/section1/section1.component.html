@@ -1,0 +1,16 @@
+@defer (on viewport) {
+    <app-section3></app-section3>
+
+} @placeholder {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @loading (after 1s; minimum 3s) {
+    <div class="section {{ name }} placeholder">
+        <p>{{ name }} placeholder!</p>
+    </div>
+} @error {
+    <div class="section {{ name }} error">
+        <p>{{ name }} error!</p>
+    </div>
+}

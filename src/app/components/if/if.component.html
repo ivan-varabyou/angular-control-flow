@@ -1,0 +1,45 @@
+<div class="section">
+    <p>catalog works!</p>
+    <input type="text" [(ngModel)]="theme">
+</div>
+
+@let theme1 = theme === 'theme1';
+@let theme2 = theme === 'theme2';
+
+@defer (when theme1 ) {
+    @defer (on viewport) {
+        <app-section1></app-section1>
+    } @placeholder {
+        <div class="section {{ name }} placeholder">
+            <p>{{ name }} placeholder!</p>
+        </div>
+    } @loading (after 1s; minimum 3s) {
+        <div class="section {{ name }} loading">
+            <p>{{ name }} loading!</p>
+        </div>
+    } @error {
+        <div class="section {{ name }} error">
+            <p>{{ name }} error!</p>
+        </div>
+    }
+}
+
+
+
+@defer (when theme2 ) {
+    @defer (on viewport) {
+        <app-section2></app-section2>
+    } @placeholder {
+        <div class="section {{ name }} placeholder">
+            <p>{{ name }} placeholder!</p>
+        </div>
+    } @loading (after 1s; minimum 3s) {
+        <div class="section {{ name }} loading">
+            <p>{{ name }} loading!</p>
+        </div>
+    } @error {
+        <div class="section {{ name }} error">
+            <p>{{ name }} error!</p>
+        </div>
+    }
+}
